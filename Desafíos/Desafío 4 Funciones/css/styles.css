@@ -1,0 +1,24 @@
+header, .container-fluid, .row, .encabezado {
+    background: orange;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+header, .container-fluid, .row, .encabezado, h1 {
+    color: white;
+    text-align: center;
+}
+
+.botonera, .container, .row, .col-md-12 {
+    background: none;
+}
+
+.botonera .container .row .col-md-12 .btn-st, .btn-mark {
+    background-color: #64B5F6;
+    border: none;
+    border-radius: 2px;
+    padding: 2% 2% 2% 2%;
+    width: 200px;
+    font-weight: bold;
+}
+
