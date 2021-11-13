@@ -1,0 +1,22 @@
+.appHeader {
+  background: #ffca28; }
+  .appHeader h1 {
+    text-align: center;
+    color: black;
+    padding-top: 5%;
+    padding-bottom: 5%; }
+
+.botonera {
+  margin-top: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .botonera .row {
+    margin-top: 1%; }
+    .botonera .row button {
+      background: #2286c3;
+      border: none;
+      border-radius: 8%;
+      height: 100px; }
+      .botonera .row button:hover {
+        background: #9be7ff; }
