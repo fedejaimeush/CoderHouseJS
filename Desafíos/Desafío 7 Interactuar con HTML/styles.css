@@ -146,14 +146,14 @@ header .title p {
     justify-content: center;
 }
 
-.nuevaEvaluacionBtn{
+.appBtn{
     background: #20305E;
     color: #ffff;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
 
-.nuevaEvaluacionBtn:hover{
+.appBtn:hover{
     background: #ffff;
     color: #20305E;
     border: 1px solid #20305E;   
@@ -167,15 +167,31 @@ header .title p {
     margin-right: auto;
 }
 
-.evaluacionesCargadas .col-md-4 {
-    border-bottom: 1px solid #20305E;
+.evaluacionesCargadas .col-md-12 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    color: #20305E;
+    font-size: 20px;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
-.evaluacionesCargadas h4 {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+.evaluacionesCargadas #evaluacionesList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.evaluacionesCargadas #evaluacionesList .card {
+    margin-bottom: 1%;
+}
+
+.evaluacionesCargadas #evaluacionesList .card .card-body a{
     color: #20305E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
 .listadoDeNotas {
@@ -208,10 +224,3 @@ header .title p {
     justify-content: center;
 }
 
-.listadoDeNotas .calificacionesTableBtn button {
-    background: #20305E;
-    color: #ffff;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    
-}

@@ -40,33 +40,53 @@ let divEvList = document.getElementById("evaluacionesList");
 
 evaluaciones.forEach((evaluacion, indice)=> {
     divEvList.innerHTML += `
-    <div class="row" id="evaluacion${indice + 1}">
-        <div class="col-md-4">
-            <p> ${evaluacion.nombre}</p>
-        </div>
-        <div class="col-md-4">
-        <p> ${evaluacion.tipo}</p>
-        </div>
-        <div class="col-md-4">
-        <p> ${evaluacion.fecha}</p>
-        </div>
-    </div>`
+        <div id="evaluacion${indice + 1}" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">${evaluacion.nombre}</h5>
+                <p class="card-text">Tipo: ${evaluacion.tipo}</p>
+                <p class="card-text">Fecha: ${evaluacion.fecha}</p>
+                <a href="#" class="card-link">Administrar notas</a>
+            </div>
+        </div>`
  })
 
  //CLASE ESTUDIANTES
  class Estudiante{
-     constructor(nombre, apellido, promedio){
+     constructor(nombre, apellido, nota, promedio){
          this.nombre = nombre;
          this.apellido = apellido;
+         this.nota = parseFloat(nota)
          this.promedio = parseFloat(promedio);
      }
  }
 
- const estudiante1 = new Estudiante("Franco", "Pierotti", 8);
- const estudiante2 = new Estudiante("Leandro", "Gonzalez", 8.25);
- const estudiante3 = new Estudiante("Santino", "Gonzalez", 7);
- const estudiante4 = new Estudiante("Francisco", "Godoy", 5);
- const estudiante5 = new Estudiante("Miqueas", "Maidana", 6);
+ const estudiante1 = new Estudiante("Franco", "Pierotti", 6, 8);
+ const estudiante2 = new Estudiante("Leandro", "Gonzalez", 7, 8.25);
+ const estudiante3 = new Estudiante("Santino", "Gonzalez", 8, 7);
+ const estudiante4 = new Estudiante("Francisco", "Godoy", 9, 5);
+ const estudiante5 = new Estudiante("Miqueas", "Maidana", 7,  6);
 
  var estudiantes = [estudiante1, estudiante2, estudiante3, estudiante4, estudiante5];
 
+
+//CARGAR OBJETO ESTUDIANTE EN EL DOM
+let divGradesList = document.getElementById("bodyGradesTable");
+
+estudiantes.forEach((estudiante, indice) => {
+    divGradesList.innerHTML += 
+    `<tr id="estudiante${indice + 1}"> 
+        <td><h5> ${estudiante.nombre} ${estudiante.apellido} </h5></td>
+        <td><p> ${estudiante.nota} </p> </td>
+        <td><p> ${estudiante.nota} </p> </td>
+        <td><p> ${estudiante.nota} </p> </td>
+        <td><p> ${estudiante.nota} </p> </td>
+        <td><p> ${estudiante.nota} </p> </td>
+        <td><p> ${estudiante.nota} </p> </td>
+        <td><p> ${estudiante.nota} </p> </td>
+        <td><p> ${estudiante.nota} </p> </td>
+        <td><p> ${estudiante.nota} </p> </td>
+        <td><p> ${estudiante.nota} </p> </td>
+        <td><p>${estudiante.promedio}</p></td>    
+    </tr>
+    `
+})
