@@ -1,29 +1,42 @@
-.appHeader {
-    background: #ffca28;
-    h1 {
-        text-align: center;
-        color: black;
-        padding-top: 5%;
-        padding-bottom: 5%;
-    }
+/*colores*/
+$color-primario: #20305E;
+$color-secundario: #7D86BC;
+$naranja-primario: #FF8C42;
+$naranja-secundario: #FFBD70;
+$blanco: #ffff;
+
+/*body*/
+body {
+    background: $color-secundario;
 }
 
-.botonera {
-    margin-top: 1%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .row{
-        margin-top: 1%;
-        button {
-            background: #2286c3;
-            border: none;
-            border-radius: 8%;
-            height: 100px;
-            &:hover{
-                background: #9be7ff;
-            }
-        }
+/*estilos de todos los h2*/
+h2 {
+    text-align: center;
+    color: $color-primario;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 800;
+}
+
+
+/*estilos del header*/
+.appHeader {
+    background: $color-primario;
+    height: 200px;
+    h1 {
+        text-align: center;
+        color: $blanco;
+        padding-top: 5%;
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 900;
+        
+    }
+    p {
+        margin-top: 2%;
+        text-align: center;
+        color: $blanco;
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 500;
     }
 }
 
@@ -31,26 +44,156 @@
     margin-top: 4%;
     margin-bottom: 4%;
     text-align: center;
+    .col-md-12{
+        background: $blanco;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
 }
 
-.moduloProfesor {
-  .row {
-    .sectionTeacherTitle{
-        margin-top: 5%;
-        text-align: center;
-    }
-  }
-  .row{
-    .botonera{
-        button {
-            background: #2286c3;
-            border: none;
-            border-radius: 8%;
-            height: 100px;
+/*estilos botonera*/
+.botonera {
+    background: $blanco;
+    width: 95%;
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 20px;
+    margin-bottom: 5%;
+    .botonera-flex{
+        display: flex;
+        justify-content: space-around;
+        .btn-app {
+            width: 15%;
+            background: $color-primario;
+            color: $blanco;
+            font-family: 'Roboto', sans-serif; 
+            font-weight: 400;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            border-radius: 30px;
             &:hover{
-                background: #9be7ff;
+                background: $blanco;
+                border: 1px solid $color-primario;
+                color: $color-primario;
+            }
+            
+        }
+    }
+}
+
+
+/*estilos página cargar notas*/
+.cargaEvaluacion{
+    background: #e0e0e0;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 20px;
+    height: 240px;
+    h3{
+        text-align: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        color: $color-primario;
+    }
+    .g-3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .appBtn{
+        background: #20305E;
+        color: #ffff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+    &:hover{
+        background: #ffff;
+        color: #20305E;
+        border: 1px solid #20305E;   
+    }
+    }
+}
+
+.evaluacionesCargadas{
+    margin-top: 2%;
+    background: #e0e0e0;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    .col-md-12 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-align: center;
+        color: #20305E;
+        font-size: 20px;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    #evaluacionesList {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .card {
+            margin-bottom: 1%;
+            .card-body{
+                a{
+                    color: #20305E;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 500;
+                }
             }
         }
     }
 }
+
+/*estilos página cargar estudiantes*/
+.cargaEstudiante{
+    background: #e0e0e0;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 20px;
+    height: 240px;
+    padding-right: 5%;
+    padding-left: 5%;
+    h3{
+        text-align: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        color: $color-primario;
+    }
+    .g-3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .appBtn{
+        background: #20305E;
+        color: #ffff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        margin-bottom: 5%;
+    &:hover{
+        background: #ffff;
+        color: #20305E;
+        border: 1px solid #20305E;   
+        }
+    }
+    #btn-eliminarListadoEstudiantes{
+        background: $naranja-secundario;
+        color: black;
+        &:hover{
+            background: $naranja-primario;   
+            }
+
+    }
+    .listaEstudiantes{
+        margin-top: 3%;
+    }
 }

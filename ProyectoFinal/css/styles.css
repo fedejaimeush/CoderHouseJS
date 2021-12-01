@@ -1,39 +1,158 @@
+@charset "UTF-8";
+/*colores*/
+/*body*/
+body {
+  background: #7D86BC; }
+
+/*estilos de todos los h2*/
+h2 {
+  text-align: center;
+  color: #20305E;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800; }
+
+/*estilos del header*/
 .appHeader {
-  background: #ffca28; }
+  background: #20305E;
+  height: 200px; }
   .appHeader h1 {
     text-align: center;
-    color: black;
+    color: #ffff;
     padding-top: 5%;
-    padding-bottom: 5%; }
-
-.botonera {
-  margin-top: 1%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .botonera .row {
-    margin-top: 1%; }
-    .botonera .row button {
-      background: #2286c3;
-      border: none;
-      border-radius: 8%;
-      height: 100px; }
-      .botonera .row button:hover {
-        background: #9be7ff; }
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900; }
+  .appHeader p {
+    margin-top: 2%;
+    text-align: center;
+    color: #ffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; }
 
 .titMod {
   margin-top: 4%;
   margin-bottom: 4%;
   text-align: center; }
+  .titMod .col-md-12 {
+    background: #ffff;
+    padding-top: 2%;
+    padding-bottom: 2%; }
 
-.moduloProfesor .row .sectionTeacherTitle {
+/*estilos botonera*/
+.botonera {
+  background: #ffff;
+  width: 95%;
+  margin: auto;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-radius: 20px;
+  margin-bottom: 5%; }
+  .botonera .botonera-flex {
+    display: flex;
+    justify-content: space-around; }
+    .botonera .botonera-flex .btn-app {
+      width: 15%;
+      background: #20305E;
+      color: #ffff;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      border-radius: 30px; }
+      .botonera .botonera-flex .btn-app:hover {
+        background: #ffff;
+        border: 1px solid #20305E;
+        color: #20305E; }
+
+/*estilos página cargar notas*/
+.cargaEvaluacion {
+  background: #e0e0e0;
+  width: 90%;
+  margin: auto;
   margin-top: 5%;
-  text-align: center; }
+  border-radius: 20px;
+  height: 240px; }
+  .cargaEvaluacion h3 {
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #20305E; }
+  .cargaEvaluacion .g-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .cargaEvaluacion .appBtn {
+    background: #20305E;
+    color: #ffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; }
+    .cargaEvaluacion .appBtn:hover {
+      background: #ffff;
+      color: #20305E;
+      border: 1px solid #20305E; }
 
-.moduloProfesor .row .botonera button {
-  background: #2286c3;
-  border: none;
-  border-radius: 8%;
-  height: 100px; }
-  .moduloProfesor .row .botonera button:hover {
-    background: #9be7ff; }
+.evaluacionesCargadas {
+  margin-top: 2%;
+  background: #e0e0e0;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto; }
+  .evaluacionesCargadas .col-md-12 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    color: #20305E;
+    font-size: 20px;
+    padding-top: 2%;
+    padding-bottom: 2%; }
+  .evaluacionesCargadas #evaluacionesList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly; }
+    .evaluacionesCargadas #evaluacionesList .card {
+      margin-bottom: 1%; }
+      .evaluacionesCargadas #evaluacionesList .card .card-body a {
+        color: #20305E;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500; }
+
+/*estilos página cargar estudiantes*/
+.cargaEstudiante {
+  background: #e0e0e0;
+  width: 90%;
+  margin: auto;
+  margin-top: 5%;
+  border-radius: 20px;
+  height: 240px;
+  padding-right: 5%;
+  padding-left: 5%; }
+  .cargaEstudiante h3 {
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #20305E; }
+  .cargaEstudiante .g-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .cargaEstudiante .appBtn {
+    background: #20305E;
+    color: #ffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin-bottom: 5%; }
+    .cargaEstudiante .appBtn:hover {
+      background: #ffff;
+      color: #20305E;
+      border: 1px solid #20305E; }
+  .cargaEstudiante #btn-eliminarListadoEstudiantes {
+    background: #FFBD70;
+    color: black; }
+    .cargaEstudiante #btn-eliminarListadoEstudiantes:hover {
+      background: #FF8C42; }
+  .cargaEstudiante .listaEstudiantes {
+    margin-top: 3%; }
