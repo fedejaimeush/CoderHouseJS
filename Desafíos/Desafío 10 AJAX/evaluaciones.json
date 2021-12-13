@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "nombre": "Trabajo Práctico N° 1",
+        "contenido": "Ángulos"
+    },
+
+    {
+        "id": 2,
+        "nombre": "Trabajo Práctico N° 2",
+        "contenido": "Libro de lectura 1"
+    },
+
+    {
+        "id": 3,
+        "nombre": "Evaluación Oral N° 1",
+        "contenido": "Ángulos"
+    },
+
+    {
+        "id": 4,
+        "nombre": "Trabajo Práctico N° 3",
+        "contenido": "Libro de lectura 2"
+    }
+]
