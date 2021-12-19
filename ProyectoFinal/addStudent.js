@@ -1,4 +1,4 @@
-'use strict'
+
 
 // SCRIPT CARGA ESTUDIANTES
 
@@ -82,3 +82,26 @@ function agregarNuevoEstudiante(e) {
         alert("No fue posible añadir un nuevo estudiante.")
     }
 };
+
+//ajax 
+
+fetch('./estudiantes.json')
+    .then(promesa => promesa.json())
+    .then(students => {
+        students.forEach(student => {
+            divListaEstudiantes.innerHTML += `
+            <div id="estudiante${indice + 1}" class="stListContainer">
+                    <div class="studentIDDiv">
+                        <p>${student.dni}</p>
+                    </div>
+                    <div class="studentNameDiv">
+                        <p>${student.nombre}</p>
+                    </div>
+                    <div class="studentLastNameDiv">
+                        <p>${student.apellido}</p>
+                    </div>
+                </div>
+    `
+        });
+    })
+    .catch(error => console.error(error))

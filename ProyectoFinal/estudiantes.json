@@ -1,0 +1,25 @@
+[
+    {
+        "dni": 32386705,
+        "nombre": "Nicolas",
+        "apellido": "Irianni",
+    },
+
+    {
+        "dni": 35897949,
+        "nombre": "Adrian",
+        "apellido": "Jaime",
+    },
+
+    {
+        "dni": 33597364,
+        "nombre": "Florencia",
+        "apellido": "Ciampoli",
+    },
+
+    {
+        "dni": 35649394,
+        "nombre": "Verónica",
+        "apellido": "Barón",
+    }
+]

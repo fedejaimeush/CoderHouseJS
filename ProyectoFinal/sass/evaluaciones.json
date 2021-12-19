@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "nombre": "Trabajo Práctico N° 1",
+        "tipo": "Trabajo Práctico",
+        "contenido": "Ángulos"
+    },
+
+    {
+        "id": 2,
+        "nombre": "Trabajo Práctico N° 2",
+        "tipo": "Trabajo Práctico",
+        "contenido": "Libro de lectura 1"
+    },
+
+    {
+        "id": 3,
+        "nombre": "Evaluación Oral N° 1",
+        "tipo": "Examen",
+        "contenido": "Ángulos"
+    },
+
+    {
+        "id": 4,
+        "nombre": "Trabajo Práctico N° 3",
+        "tipo": "Trabajo Práctico",
+        "contenido": "Libro de lectura 2"
+    }
+]
