@@ -17,22 +17,22 @@ const listadoDeEstudiantes = [];
 
 
 //acceder a los datos del form que carga los estudiantes
-let formNuevoEstudiante = document.getElementById('formNuevoEstudiante')
-let newStudentFormBtn = document.getElementById('btn-nuevoEstudiante')
-let studentID = document.getElementById('studentID').value;
-let studentName = document.getElementById('studentName').value;
-let studentLastName = document.getElementById('studentLastName').value;
+let formNuevoEstudiante = $("#formNuevoEstudiante");
+let newStudentFormBtn = $("#btn-nuevoEstudiante");
+let studentID = $("#formNuevoEstudiante").find('input[name="studentID"]').val(); 
+let studentName = $("#formNuevoEstudiante").find('input[name="studentName"]').val(); 
+let studentLastName = $("#formNuevoEstudiante").find('input[name="studentLastName"]').val();
 let checkStudent = false; 
 
 //evento del boton agregar del form
-newStudentFormBtn.addEventListener("click", agregarNuevoEstudiante);
+$("#btn-nuevoEstudiante").click(agregarNuevoEstudiante(e));
 
 //validar que el form tiene los datos requeridos para la carga
 function validarNuevoEstudiante(){
-     studentID = document.getElementById('studentID').value;
-     studentName = document.getElementById('studentName').value;
-     studentLastName = document.getElementById('studentLastName').value;
-     console.log(`Los datos que se obtienen del form son ${studentID}, ${studentName}, ${studentLastName}`);
+     studentID = $("#formNuevoEstudiante").find('input[name="studentID"]').val(); 
+     studentName = $("#formNuevoEstudiante").find('input[name="studentName"]').val(); 
+     studentLastName = $("#formNuevoEstudiante").find('input[name="studentLastName"]').val();
+     
     if (studentID === '' || studentName === '' || studentLastName === '') {
         alert('Debes ingresar todos los datos del formulario. Por favor intenta nuevamente.')
         checkStudent = false;
@@ -42,7 +42,8 @@ function validarNuevoEstudiante(){
 }
 
 //cargar estudiante al array
-let divListaEstudiantes = document.getElementById("listaDeEstudiantes");
+let divListaEstudiantes = $("#listaDeEstudiantes");
+
 function agregarNuevoEstudiante(e) {
     e.preventDefault();
     validarNuevoEstudiante();
@@ -72,7 +73,7 @@ function agregarNuevoEstudiante(e) {
         })
 
         estudiantesParseados.forEach((estudiante, indice) => {
-            document.getElementById(`botonSt${indice + 1}`).addEventListener('click', () => {
+            $(`#botonSt${indice + 1}`).click( () => {
                 divListaEstudiantes.removeChild(document.getElementById(`estudiante${indice + 1}`));
                 listadoDeEstudiantes.splice(indice, 1);
                 localStorage.setItem('listadoDeEstudiantes', JSON.stringify(listadoDeEstudiantes));

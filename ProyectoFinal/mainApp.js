@@ -13,23 +13,22 @@ class Evaluacion{
 let evaluaciones = [];
 
 //acceder a los datos del form que agrega nuevas evaluaciones 
-let evForm = document.getElementById("evsForm");
-let evfInputNombre = document.getElementById("testName").value;
-let evfInputType = document.getElementById("testType").value;
-let evfInputContent = document.getElementById("testContent").value;
+let evForm = $("#evsForm"); 
+let evfInputNombre = $("#evsForm").find('input[name="testName"]').val();
+let evfInputType = $("#evsForm").find('input[name="testType"]').val(); 
+let evfInputContent = $("#evsForm").find('input[name="testContent"]').val();  
 let check = false; 
 
 //evento del botón agregar del form
-
-evForm.addEventListener("submit", agregarNuevaEvaluacion);
+$("#evsForm").submit(agregarNuevaEvaluacion(e));
 
 //función para validar el formulario que agrega nuevas evaluaciones
 
 function validarNuevaEvaluacion(){
-    evfInputNombre = document.getElementById("testName").value;
-    evfInputType = document.getElementById("testType").value;
-    evfInputContent = document.getElementById("testContent").value;
-    console.log(`Los datos que se obtienen del form son ${evfInputNombre}, ${evfInputType}, ${ evfInputContent}`);
+    evfInputNombre = $("#evsForm").find('input[name="testName"]').val();
+    evfInputType = $("#evsForm").find('input[name="testType"]').val(); 
+    evfInputContent = $("#evsForm").find('input[name="testContent"]').val();  
+    
 
     if (evfInputNombre == '' || evfInputType == '' ||  evfInputContent == ''){
         alert('Para poder continuar es necesario completar todos los datos en el formulario.');
@@ -40,7 +39,7 @@ function validarNuevaEvaluacion(){
 }
 
 //cargar evaluacion al array 
-let divEvList = document.getElementById("evaluacionesList");
+let divEvList = $("#evaluacionesList");
 function agregarNuevaEvaluacion(e){
     e.preventDefault();
     validarNuevaEvaluacion();
@@ -53,8 +52,8 @@ function agregarNuevaEvaluacion(e){
             evForm.reset();
             let evaluacionesParseadas = JSON.parse(localStorage.getItem('evaluaciones'));
             evaluacionesParseadas.forEach((evaluacion, indice)=> {
-            divEvList.innerHTML += `
-                        <div id="evaluacion${indice + 1}" class="card" style="width: 18rem;">
+            $("#evaluacionesList").append(
+                `<div id="evaluacion${indice + 1}" class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title">${evaluacion.nombre}</h5>
                                 <p class="card-text">Tipo: ${evaluacion.tipo}</p>
@@ -63,11 +62,16 @@ function agregarNuevaEvaluacion(e){
                                 <button type="button" class="btn btn-danger" id="boton${indice + 1}">Eliminar evaluacion</button>
                             </div>
                         </div>`
-                })
+            );
+            
+            
+                
+                        
+            })
             
                 evaluacionesParseadas.forEach((evaluacion, indice) => {
-                    document.getElementById(`boton${indice + 1}`).addEventListener('click', () => {
-                        divEvList.removeChild(document.getElementById(`evaluacion${indice + 1}`));
+                    $(`#boton${indice + 1}`).click( () => {
+                        $("#evaluacionesList").removeChild($("#boton${indice + 1}"));
                         evaluaciones.splice(indice,1);
                         localStorage.setItem('evaluaciones', JSON.stringify(evaluaciones)); 
                     })

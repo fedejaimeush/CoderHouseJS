@@ -1,26 +1,26 @@
-const bioTask = document.getElementById('bio');
-const edfTask = document.getElementById('edf');
-const matTask = document.getElementById('mat');
-const hisTask = document.getElementById('his');
-const fisTask = document.getElementById('fis');
-const ingTask = document.getElementById('ing');
-const deselectBtn = document.getElementById('deselect');
-const taskContainer = document.querySelector('.task__container');
-const scheduleContainer = document.querySelector('.schedule__container');
-const resetBtn = document.querySelector('.deleteBtn');
-const popUp = document.querySelector('.pop-up__container');
-const noBtn = document.getElementById('btn__no');
-const yesBtn = document.getElementById('btn__yes');
+const bioTask = $('#bio');
+const edfTask = $('#edf');
+const matTask = $('#mat');
+const hisTask = $('#his');
+const fisTask = $('#fis');
+const ingTask = $('#ing');
+const deselectBtn = $('#deselect');
+const taskContainer = $('.task__container');
+const scheduleContainer = $('.schedule__container');
+const resetBtn = $('.deleteBtn');
+const popUp = $('.pop-up__container');
+const noBtn = $('#btn__no');
+const yesBtn = $('#btn__yes');
 
 let selectedColor, active;
 
 //Event Listeners
-taskContainer.addEventListener('click', selectTask);
-scheduleContainer.addEventListener('click', setColors);
-deselectBtn.addEventListener('click', resetTasks);
-resetBtn.addEventListener('click',openPopup);
-noBtn.addEventListener('click', closePopup);
-yesBtn.addEventListener('click', deleteTasks);
+taskContainer.click(selectTask);
+scheduleContainer.click(setColors);
+deselectBtn.click(resetTasks);
+resetBtn.click(openPopup);
+noBtn.click(closePopup);
+yesBtn.click(deleteTasks);
 
 // Espacios curriculares click  (3)
 function selectTask (e){
@@ -83,7 +83,7 @@ function activeTask(task, color){
 
 // Reiniciar (2)
 function resetTasks(){
-    const allTasks = document.querySelectorAll('.task__name');
+    const allTasks = $('.task__name');
 
     allTasks.forEach((item)=>{
         item.className = 'task__name';
@@ -92,7 +92,7 @@ function resetTasks(){
 
 // Eliminar
 function deleteTasks(){
-    const tasks = document.querySelectorAll('.task');
+    const tasks = $('.task');
 
     tasks.forEach((item)=>{
         item.innerHTML = '';
